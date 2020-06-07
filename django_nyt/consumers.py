@@ -121,7 +121,7 @@ class NYTconsumer(AsyncJsonWebsocketConsumer):
         """
 
         await self.send_json({
-            'text': event['text'],
+            'text': event.get('text', None),
         })
 
     #async def get_subscriptions(self):
